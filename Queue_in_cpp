@@ -18,3 +18,18 @@ int main(){
 
 //priority_Queue_in_cpp:
 
+priority_queue<int>pq;//it stores in decending order
+    pq.push(1);//{1}
+    pq.push(10);//{10,1}
+    pq.push(5);//{10,5,1}
+    pq.emplace(8);//{10,8,5,1}
+    cout<<pq.top()<<endl;//prints 10
+    pq.pop();//10 will be removed
+    cout<<pq.top()<<endl;//8 will be printed
+
+    //minimum heap-- to store in accending oredr
+    priority_queue<int,vector<int>,greater<int>>pq1;
+    pq1.push(10);//{10}
+    pq1.push(8);//{8,10}
+    cout<<pq1.top();
+
