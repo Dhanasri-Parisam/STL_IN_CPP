@@ -1,3 +1,15 @@
+// SET:
+---------------------------------------------------------------------------------------
+Properties:
+Stores unique elements.
+Elements are sorted in ascending order (or in the order defined by a custom comparator).
+Based on a balanced binary search tree (usually a Red-Black Tree).
+Time Complexity:
+
+Insertion, deletion, and search operations take 
+O(logn) time.
+---------------------------------------------------------------------------------------
+
 #include<iostream>
 #include<set>
 #include<iterator>
@@ -50,27 +62,58 @@ int main()
     }
 }
 
+------------------------------------------------------------------------------------------------
+//unordered_set
 
+Properties:
 
-#include<iostream>
-#include<set>
+Stores unique elements.
+Elements are stored in no specific order.
+Based on a hash table.
+Time Complexity:
+
+Average time complexity for insertion, deletion, and search is 
+𝑂(1)
+In the worst case, operations can take 
+O(n) time 
+-------------------------------------------------------------------------------
+#include <iostream>
+#include <unordered_set>
 using namespace std;
 
 int main() {
-   set<int> se;
-   se.insert(1);
-   se.insert(2);
-   se.insert(10);
-   se.insert(1);
-   se.insert(4);
-   se.emplace(3);
-   for(auto it=se.begin();it!=se.end();it++){  //prints(all elements)
-    cout<<*it;
-   }
-   auto it=se.find(10);
-   se.erase(it);  //10 will be erased
-   for(auto it=se.begin();it!=se.end();it++){
-    cout<<*it;
-   }
-   
+    unordered_set<int> us;
+    us.insert(10);
+    us.insert(5);
+    us.insert(20);
+    us.insert(10);  // Won't insert a duplicate
+    for(auto x : us)
+        cout << x << " ";  // Output: Elements in arbitrary order, e.g., 20 5 10
+    return 0;
+}
+---------------------------------------------------------------------------------
+//Multi set:
+Properties:
+
+Stores duplicate elements (i.e., multiple occurrences of the same value are allowed).
+Elements are sorted in ascending order (or in the order defined by a custom comparator).
+Based on a balanced binary search tree (usually a Red-Black Tree).
+Time Complexity:
+
+Insertion, deletion, and search operations take 
+O(logn) time.
+
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main() {
+    multiset<int> ms;
+    ms.insert(10);
+    ms.insert(5);
+    ms.insert(20);
+    ms.insert(10);  // Will insert a duplicate
+    for(auto x : ms)
+        cout << x << " ";  // Output: 5 10 10 20
+    return 0;
 }
