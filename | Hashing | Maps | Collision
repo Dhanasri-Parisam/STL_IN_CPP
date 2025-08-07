@@ -157,17 +157,17 @@ int main()
 -----------------------------------------------------------------------------------------------------------------------------------------
 #include <bits/stdc++.h>
 using namespace std;
- 
+
 void countFreq(int arr[], int n)
 {
     vector<bool> visited(n, false);
- 
+
     for (int i = 0; i < n; i++) {
- 
+
         // Skip this element if already processed
         if (visited[i] == true)
             continue;
- 
+
         // Count frequency
         int count = 1;
         for (int j = i + 1; j < n; j++) {
@@ -179,7 +179,7 @@ void countFreq(int arr[], int n)
         cout << arr[i] << " " << count << endl;
     }
 }
- 
+
 int main()
 {
     int arr[] = {10,5,10,15,10,50};
